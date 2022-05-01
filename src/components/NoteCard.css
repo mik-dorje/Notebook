@@ -1,0 +1,50 @@
+/* NoteCard.css is created as makeStyles didnot work */
+.card-box {
+  box-sizing: border-box;
+  transition: all 200ms ease;
+  background-color: white;
+}
+
+.card:hover{
+  transform: scale(1.02);
+  transition-timing-function: ease-in-out;
+  transition: 200ms;
+  box-shadow: 0 0 8px 2px rgb(170, 170, 170);
+
+}
+
+
+.eventAvatar{
+  background-color: rgb(205, 85, 85) !important;
+}
+.todoAvatar{
+  background-color: rgb(95, 95, 160) !important;
+}
+.remainderAvatar{
+  background-color: rgb(50, 170, 215) !important;
+} 
+.messageAvatar{
+  background-color: rgb(55, 160, 55) !important;
+}
+
+
+
+
+.eventCard {
+  border: 1px solid rgb(205, 85, 85);
+}
+
+.todoCard {
+  border: 1px solid rgb(95, 95, 160);
+ 
+}
+.remainderCard {
+ 
+  border: 1px solid rgb(50, 170, 215);
+}
+
+.messageCard{
+
+  border: 1px solid rgb(55, 160, 55);
+
+}

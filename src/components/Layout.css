@@ -1,0 +1,10 @@
+/* styling done separately for active menu item on the 
+left drawer as the makeStyles function didnot work */
+
+
+.active{
+    /* background-color: #e2dddd !important; */
+
+    background-color: #ece6e6 !important;
+
+}
