@@ -1,10 +1,10 @@
 /* From uiverse.io by @adamgiebl */
-button {
-    margin-top: 10px;
+.bigbutton {
+  margin-top: 4px;
   font-family: inherit;
-  font-size: 18px;
-  background: #1d6509;
-  color: white;
+  font-size: 16px;
+  background: rgb(52, 133, 133);
+  color: whitesmoke;
   padding: 0.5em 1em;
   padding-left: 0.5em;
   display: flex;
@@ -12,34 +12,36 @@ button {
   border: none;
   border-radius: 10px;
   overflow: hidden;
+
   transition: all 0.2s;
+  /* border: 2px solid rgb(73, 71, 71); */
 }
 
-button span {
+.bigbutton span {
   display: block;
   margin-left: 0.3em;
   transition: all 0.3s ease-in-out;
 }
 
-button svg {
+.bigbutton svg {
   display: block;
   transform-origin: center center;
   transition: transform 0.3s ease-in-out;
 }
 
-button:hover .svg-wrapper {
+.bigbutton:hover .svg-wrapper {
   animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 
-button:hover svg {
+.bigbutton:hover svg {
   transform: translateX(2em) rotate(45deg) scale(1.2);
 }
 
-button:hover span {
+.bigbutton:hover span {
   transform: translateX(5em);
 }
 
-button:active {
+.bigbutton:active {
   transform: scale(0.95);
 }
 
@@ -51,4 +53,9 @@ button:active {
   to {
     transform: translateY(-0.1em);
   }
+}
+
+/* This changes the outline of the all the Mui textField  */
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border: 1px solid #5e5e5e !important;
 }

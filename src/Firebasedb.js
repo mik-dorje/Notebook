@@ -2,10 +2,6 @@ import firebase from "firebase/compat/app"
 import "firebase/compat/auth"
 import "firebase/compat/firestore"
 
-import { initializeApp } from 'firebase/app';
-
-
-
 // https://www.youtube.com/watch?v=lW8NWB1cvMA
 
 const firebaseConfig = {
@@ -20,9 +16,11 @@ const firebaseConfig = {
   
 firebase.initializeApp(firebaseConfig)
 
-// export default firebase
-export const ref = firebase.firestore().collection("Notebook");
-
+export const ref = firebase.firestore().collection("Privatebook");
 // console.log(ref)
+
+export const db = firebase.firestore()
+export const ref1= db.collection("Privatebook")
+// console.log(ref1)
 
 

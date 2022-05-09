@@ -3,46 +3,28 @@ import React from "react";
 import { Card, CardHeader, CardContent, Typography } from "@material-ui/core";
 
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
-import { Avatar, Divider, IconButton } from "@mui/material";
-import { blue, green, pink, yellow, purple } from "@mui/material/colors";
+import DriveFileRenameOutlineIcon from "@mui/icons-material/DriveFileRenameOutline";
 
-import { makeStyles } from "@material-ui/styles";
-
+import { Avatar, Divider, IconButton, Tooltip } from "@mui/material";
 import "./NoteCard.css";
 
-//since makeStyles is not working, the conditional color styling is implemented inside using sx
-const useStyles = makeStyles({
-  avatar: {
-    backgroundColor: (note) => {
-      if (note.category == "work") {
-        return yellow[700];
-      }
-      if (note.category == "money") {
-        return green[500];
-      }
-      if (note.category == "todos") {
-        return pink[500];
-      }
-      return blue[500];
-    },
-  },
-});
-
-export default function NoteCard({ note, handleDelete }) {
-  const classes = useStyles(note);
-
+export default function NoteCard({ note, handleDelete, handleEdit }) {
   return (
     <div className="card-box">
       <Card
-       style={{borderRadius: '10px'}}
+        style={{ borderRadius: "10px" }}
         className={`card 
         ${
-          note.category == "Event" ? "eventCard" : ""
-          || note.category == "Todo" ? "todoCard" : ""
-          || note.category == "Remainder" ? "remainderCard" : ""
-          || note.category == "Message" ? "messageCard" : "" 
-          }`}
-
+          note.category == "Event"
+            ? "eventCard"
+            : "" || note.category == "Todo"
+            ? "todoCard"
+            : "" || note.category == "Reminder"
+            ? "reminderCard"
+            : "" || note.category == "Message"
+            ? "messageCard"
+            : ""
+        }`}
         elevation={3}
       >
         <CardHeader
@@ -51,28 +33,49 @@ export default function NoteCard({ note, handleDelete }) {
               className={
                 (note.category == "Event" && "eventAvatar") ||
                 (note.category == "Todo" && "todoAvatar") ||
-                (note.category == "Remainder" && "remainderAvatar") ||
+                (note.category == "Reminder" && "reminderAvatar") ||
                 (note.category == "Message" && "messageAvatar")
               }
-
-              
             >
               {note.category[0].toUpperCase()}
             </Avatar>
           }
           action={
-            <IconButton color="primary" onClick={() => handleDelete(note.id)}>
-              <DeleteForeverIcon sx={{ fontSize: 28 }} color="secondary" />
-            </IconButton>
+            <div>
+              <Tooltip title="Edit">
+                <IconButton
+                  className="icon-btn"
+                  size="small"
+                  color="primary"
+                  onClick={() => handleEdit(note.id)}
+                >
+                  <DriveFileRenameOutlineIcon
+                    sx={{ fontSize: 28 }}
+                    color="secondary"
+                  />
+                </IconButton>
+              </Tooltip>
+
+              <Tooltip title="Delete">
+                <IconButton
+                  className="icon-btn"
+                  size="small"
+                  color="primary"
+                  onClick={() => handleDelete(note.id)}
+                >
+                  <DeleteForeverIcon sx={{ fontSize: 28 }} color="secondary" />
+                </IconButton>
+              </Tooltip>
+            </div>
           }
           title={note.title.toUpperCase()}
           subheader={note.category}
         />
         <Divider />
         <CardContent>
-        <Typography style={{ fontSize: "0.8rem", color: "blueviolet" }}>
-          {note.date}
-        </Typography>
+          <Typography style={{ fontSize: "0.8rem", color: "blueviolet" }}>
+            {note.date}
+          </Typography>
           <Typography
             variant="body2"
             color="textSecondary"

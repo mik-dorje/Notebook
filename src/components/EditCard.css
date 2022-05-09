@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai+Looped:wght@100&family=Inter:wght@400;500;700&family=Quicksand:wght@300;400;500;600;700&display=swap");
+
+.edit-card {
+  box-sizing: border-box;
+  background-color: white !important;
+  border-radius: 10px;
+  /* border: 1px solid green; */
+  box-shadow: 0 0 15px 5px rgb(170, 170, 170);
+
+  transform: scale(1.1);
+  transition-timing-function: ease-in-out;
+  transition: all 600ms;
+
+  font-family: Quicksand;
+}
+
+.card-top {
+  /* background-color: blue; */
+  padding: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 65px;
+}
+
+.card-title {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.update-close-btns {
+  /* outline: 2px solid red; */
+  display: flex;
+  flex-direction: row;
+}
+
+.update-close-btns > div {
+  display: flex;
+  /* background-color: green; */
+}
+
+.card-bottom {
+  padding: 19px;
+}
+
+.eventEditAvatar {
+  background-color: rgb(205, 85, 85) !important;
+  border: 1px dotted whitesmoke;
+}
+.todoEditAvatar {
+  background-color: rgb(95, 95, 160) !important;
+  border: 1px dotted whitesmoke;
+}
+.reminderEditAvatar {
+  background-color: rgb(50, 170, 215) !important;
+  border: 1px dotted whitesmoke;
+}
+.messageEditAvatar {
+  background-color: rgb(55, 160, 55) !important;
+  border: 1px dotted whitesmoke;
+}
+
+.eventEdit {
+  border: 1px dashed rgb(205, 85, 85);
+}
+
+.todoEdit {
+  border: 1px dashed rgb(95, 95, 160);
+}
+
+.reminderEdit {
+  border: 1px dashed rgb(50, 170, 215);
+}
+
+.messageEdit {
+  border: 1px dashed rgb(55, 160, 55);
+}
+
+/* ---------------------------------- */
+
+.other-categories {
+  display: flex;
+  z-index: 5;
+}
+
+.edit-avatar {
+  transform: scale(0.9);
+  opacity: 0.5;
+}
+
+.edit-avatar:hover {
+  opacity: 1;
+}
+
+.cat-arrow {
+  /* background-color: red; */
+  /* margin: 5px; */
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}

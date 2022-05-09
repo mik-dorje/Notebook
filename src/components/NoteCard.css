@@ -5,29 +5,29 @@
   background-color: white;
 }
 
-.card:hover{
-  transform: scale(1.02);
+.card:hover {
+  transform: scale(1.01);
   transition-timing-function: ease-in-out;
   transition: 200ms;
   box-shadow: 0 0 8px 2px rgb(170, 170, 170);
-
 }
 
+.MuiPaper-root {
+  position: relative;
+}
 
-.eventAvatar{
+.eventAvatar {
   background-color: rgb(205, 85, 85) !important;
 }
-.todoAvatar{
+.todoAvatar {
   background-color: rgb(95, 95, 160) !important;
 }
-.remainderAvatar{
+.reminderAvatar {
   background-color: rgb(50, 170, 215) !important;
-} 
-.messageAvatar{
+}
+.messageAvatar {
   background-color: rgb(55, 160, 55) !important;
 }
-
-
 
 
 .eventCard {
@@ -36,15 +36,15 @@
 
 .todoCard {
   border: 1px solid rgb(95, 95, 160);
- 
 }
-.remainderCard {
- 
+.reminderCard {
   border: 1px solid rgb(50, 170, 215);
 }
 
-.messageCard{
-
+.messageCard {
   border: 1px solid rgb(55, 160, 55);
+}
 
+.icon-btn:hover {
+  background-color: rgb(204, 209, 209) !important;
 }

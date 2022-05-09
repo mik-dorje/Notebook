@@ -1,0 +1,179 @@
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+
+body
+{
+    font-family: sans-serif;
+    cursor: pointer;
+    
+}
+
+.firstpage
+{
+    /* background: 
+    linear-gradient(120deg, rgb(229, 231, 235), rgb(75, 85, 99), rgb(156, 163, 175)); */
+   background: linear-gradient(120deg, #8abbbe 32%, #348586 78%);
+    height: 100vh;
+   width: 100vw;
+   /* background-attachment: fixed; */
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+ 
+.login-box
+{
+    width: 375px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 1px rgb(78, 78, 78);
+    background-color: rgba(245, 247, 250, 0.75);
+}
+
+@media only screen and (max-width: 1200px){
+    /*Tablets [601px -> 1200px]*/
+    .login-box{
+        width: 330px;
+    }
+}
+@media only screen and (max-width: 600px){
+    /*Big smartphones [426px -> 600px]*/
+    .login-box{
+        width: 290px;
+    }
+}
+@media only screen and (max-width: 425px){
+    /*Small smartphones [325px -> 425px]*/
+    .login-box{
+        width: 240px;
+    }
+}
+
+
+
+.login-box h1
+{
+    text-align: center;
+    color: rgb(52, 133, 133);
+    padding: 5px 0 15px 0;
+    border-bottom: 1px solid black;
+}
+.login-box form
+{
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+form .text_field
+{
+    position: relative;
+    border-bottom: 1px solid #575151;
+    margin: 30px 0;
+}
+.text_field input
+{
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
+}
+
+.text_field label
+{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #adadad;
+    transform: translateY(-50%);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+
+/* This code to increase the blue span under the input box */
+.text_field span::before
+{
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 0%;
+    /* width initially set to 0 to increase 100% later */
+
+    height: 2px;
+    background: rgb(52, 133, 133);
+    transition: 0.6s;
+}
+
+/* input garne thau ma click garda matlab focus huda or input type garisakexi matlab entry valid
+huda label(username ra password) ko color change garne ra 5px le mathi sarne */
+
+.text_field input:focus ~ label,
+.text_field input:valid ~ label
+{
+    top: -5px;
+    color: rgb(52, 133, 133);
+}
+
+.text_field input:focus ~ span::before,
+.text_field input:valid ~ span::before
+{
+    width: 100%;
+}
+/* ------------------------------------- */
+
+input[type="submit"]
+{
+    width: 100%;
+    height: 50px;
+    border: 1px solid rgb(52, 133, 133);
+    border-radius: 25px;
+    font-size: 18px;
+    background-color: rgb(52, 133, 133);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+
+
+}
+
+
+input[type="submit"]:hover
+{
+    transition: 0.2s;
+    box-shadow: 0 0 12px 1px rgb(37, 36, 36);
+}
+input[type="submit"]:active
+{
+    transition: 0.2s ease-in-out;
+    transform: scale(0.95);
+}
+
+
+.signup_link
+{
+    margin: 30px 0; 
+    text-align: center;
+    color: #666666;  
+}
+
+.signup_link a
+{
+    color: rgb(52, 133, 133);
+    text-decoration: none;
+}
+
+.signup_link a:hover
+{  
+    text-decoration: underline;
+}
+
+ 

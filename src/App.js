@@ -1,13 +1,13 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import Notes from './pages/Notes'
-import Create from './pages/Create'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Notes from "./pages/Notes";
+import Create from "./pages/Create";
 
-import { createTheme, ThemeProvider } from '@mui/material'
-import { blueGrey, indigo } from '@mui/material/colors'
-import Layout from './components/Layout'
+import { createTheme, ThemeProvider } from "@mui/material";
+import { blueGrey, green, grey, indigo, red } from "@mui/material/colors";
+import Layout from "./components/Layout";
 
-
-
+import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 //To override the default theme values, search default theme in mui and
 //import createTheme and ThemeProvider from mui-material
@@ -15,48 +15,45 @@ import Layout from './components/Layout'
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1d6509'
+      main: "#348586",
     },
-    secondary: blueGrey
+    secondary: grey,
+    
   },
-  typography:{
-    fontFamily: 'Quicksand',
+  typography: {
+    fontFamily: "Quicksand",
     fontWeightLight: 400,
     fontWeightRegular: 500,
     fontWeightMedium: 600,
     fontWeightBold: 700,
-
-  }
-})
+  },
+});
 
 function App() {
-
- 
-
-
-
   return (
-
     <ThemeProvider theme={theme}>
-    <Router>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <Login />
+          </Route>
+          <Route path="/signup">
+            <Signup />
+          </Route>
 
-{/* <Layout/> component is added at last and switch was wwrapped around*/}
-      <Layout>
-      <Switch>
-        <Route exact path="/">
-          <Notes />
-        </Route>
-        <Route path="/create">
-          <Create />
-        </Route>
-      </Switch>
-      </Layout>
-    </Router>
-    </ThemeProvider>
-
+          {/* <Layout/> component is added at last and switch was wwrapped around*/}
+          <Layout>
+            <Route path="/create">
+              <Create />
+            </Route>
+            <Route path="/notebook">
+              <Notes />
+            </Route>
+          </Layout>
+        </Switch>
+      </Router>
+     </ThemeProvider>
   );
 }
 
 export default App;
-
-
